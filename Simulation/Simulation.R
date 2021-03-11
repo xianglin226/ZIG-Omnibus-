@@ -1,4 +1,4 @@
-#General ZIG data varing abundance, dispersion and zero ratio
+#Generate ZIG data varing abundance, dispersion and zero ratio
 zigamma <- function(n, p0=0.5, u=0.1, v=0.5, seed=0) {
   seed=rep(0,n)
   u <- u*10
