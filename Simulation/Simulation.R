@@ -1,6 +1,7 @@
 #Generate ZIG data varing abundance, dispersion and zero ratio
-zigamma <- function(n, p0=0.5, u=0.1, v=0.5, seed=0) {
+zigamma <- function(n, p0=0.5, u=0.1, s=0.5, seed=0) {
   seed=rep(0,n)
+  v = s^2
   u <- u*10
   v <- v*10
   for (i in 1:n) { 
@@ -13,8 +14,9 @@ zigamma <- function(n, p0=0.5, u=0.1, v=0.5, seed=0) {
 }
 
 #General zero inflated normal data
-zinormal<- function(n, p0=0.5, u=0.1, v=0.5, seed=0) {
+zinormal<- function(n, p0=0.5, u=0.1, s=0.5, seed=0) {
   seed=rep(0,n)
+  v = s^2
   u <- u*10
   v <- v*10
   for (i in 1:n) { 
@@ -27,8 +29,9 @@ zinormal<- function(n, p0=0.5, u=0.1, v=0.5, seed=0) {
 }
 
 #Generate gamma data
-zigamma <- function(n, p0=0, u=0.1, v=0.5, seed=0) {
+zigamma <- function(n, p0=0, u=0.1, s=0.5, seed=0) {
   seed=rep(0,n)
+  v = s^2
   u <- u*10
   v <- v*10
   for (i in 1:n) { 
