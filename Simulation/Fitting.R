@@ -94,12 +94,12 @@ loglikZIGUP <- function(par,x) {
 
 ##we first fit two groups separately
 op1<-optim(par=par0, fn=loglikZIG,
-           lower = c(0.01,0.01,0.01), upper = c(0.99,Inf,Inf), 
+           lower = c(0.001,0.001,0.001), upper = c(0.999,Inf,Inf), 
            method = "L-BFGS-B", x = group1)
 l1 <- -(op1$value)
 
 op2<-optim(par=par0, fn=loglikZIG,
-           lower = c(0.01,0.01,0.01), upper = c(0.99,Inf,Inf), 
+           lower = c(0.001,0.001,0.001), upper = c(0.999,Inf,Inf), 
            method = "L-BFGS-B", x = group2)
 l2 <- -(op2$value)
 
@@ -107,7 +107,7 @@ l12 <- l1+l2
 
 #we then fit two groups together
 op3<-optim(par=par0, fn=loglikZIG,
-           lower = c(0.01,0.01,0.01), upper = c(0.99,Inf,Inf), 
+           lower = c(0.001,0.001,0.001), upper = c(0.999,Inf,Inf), 
            method = "L-BFGS-B", x = c(group1,group2))
 l3 <- -(op3$value)
 
